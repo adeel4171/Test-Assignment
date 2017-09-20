@@ -1,0 +1,39 @@
+#<p id="notice"><%= notice %></p>
+
+<h1>Phrases</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody id="change">
+    
+  </tbody>
+  <input id='phrase_ids' type="hidden" />
+</table>
+
+<br>
+
+<%= link_to 'Next Page', phrases_path %>
+
+
+<script type="text/javascript">
+
+
+$(document).ready(function(){
+  for (i=0; i<10; ++i) {
+    $.ajax({
+      url: "<%= phrases_get_ajax_path %>",
+      method: "get",
+      data: {"phrase_ids": $("#phrase_ids").val()}
+    });
+  }
+});
+
+
+
+
+</script>

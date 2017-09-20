@@ -1,0 +1,2 @@
+$('#change').append("<tr id='<%= @phrase.id %>'><td><%= @phrase.description %></td></tr>");
+$('#phrase_ids').val($('#phrase_ids').val().concat(",").concat(<%= @phrase.id %>));
